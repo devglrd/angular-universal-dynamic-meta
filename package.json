@@ -10,7 +10,8 @@
     "dev:ssr": "ng run angular-universal-dynamic-meta-by-http:serve-ssr",
     "serve:ssr": "node dist/angular-universal-dynamic-meta-by-http/server/main.js",
     "build:ssr": "ng build && ng run angular-universal-dynamic-meta-by-http:server",
-    "prerender": "ng run angular-universal-dynamic-meta-by-http:prerender"
+    "prerender": "ng run angular-universal-dynamic-meta-by-http:prerender",
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "public": true,
+  "name": "angular-universal-dynamic-meta-by-http",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api" }
+  ],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/angular-universal-dynamic-meta-by-http/browser/**"
+    }
+  }
+}
