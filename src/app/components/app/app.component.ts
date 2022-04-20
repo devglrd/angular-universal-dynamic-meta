@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   private setMetaByRouter() {
-    const currUrl = this.doc.URL.replace('http://localhost:4200/', '').replace('http://localhost:4000/', '').replace('http://angular-universal-dynamic-meta.vercel.app/', '')
+    const currUrl = this.doc.URL.replace('http://localhost:4200/', '').replace('http://localhost:4000/', '').replace('http://angular-universal-dynamic-meta.vercel.app/', '').replace('https://angular-universal-dynamic-meta.vercel.app/', '')
     console.log(currUrl, '--');
     if (currUrl === "movies") {
       this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${this.apiKey}`).subscribe(({results}: any) => {
