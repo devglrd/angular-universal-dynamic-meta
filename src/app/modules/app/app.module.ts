@@ -4,6 +4,7 @@ import {COMPONENTS} from "./components";
 import {SERVICES} from "./services";
 import {ApplicationRouting} from "./routing/app.routing";
 import {HttpClientModule} from "@angular/common/http";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
     CommonModule,
     HttpClientModule,
     ApplicationRouting,
+    SharedModule,
   ],
   providers: [...SERVICES],
 })

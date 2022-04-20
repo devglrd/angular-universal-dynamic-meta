@@ -1,6 +1,6 @@
-<div class="div">
+<div class="div" *ngIf="!loading">
   <ng-container *ngFor="let movie of data" >
-    <div class="div" [routerLink]="['./', movie.id]" style="display: flex;margin-bottom: 10px;">
+    <div  [routerLink]="['./', movie.id]" style="display: flex;margin-bottom: 10px;">
       <img [src]="'https://image.tmdb.org/t/p/w200/' + movie.poster_path" alt="">
       <div class="" style="display: flex;flex-direction: column">
         <h1>{{ movie.title}}</h1>
@@ -10,4 +10,6 @@
   </ng-container>
 </div>
 
-<router-outlet></router-outlet>
+<div *ngIf="loading">
+  <app-loader></app-loader>
+</div>
