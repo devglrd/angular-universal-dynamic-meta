@@ -14,6 +14,7 @@ import {HttpClient} from "@angular/common/http";
 export class AppComponent implements OnInit {
 
   private apiKey = "2ad4dcfaf3dee66b78fbf265c9c6af9f";
+  public currentUrl: any = '';
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private meta: Meta, private title: Title, @Inject(DOCUMENT) private doc: any,) {
     this.setMetaByRouter()
   }
@@ -27,7 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   private setMetaByRouter() {
-    const currUrl = this.doc.URL.replace('http://localhost:50036/', '').replace('http://localhost:4200/', '').replace('http://localhost:4000/', '')
+    const currUrl = this.doc.URL.replace('http://localhost:4200/', '').replace('http://localhost:4000/', '').replace('http://angular-universal-dynamic-meta.vercel.app/', '')
     console.log(currUrl, '--');
     if (currUrl === "movies") {
       this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${this.apiKey}`).subscribe(({results}: any) => {
